@@ -18,10 +18,11 @@ const app = express();
 app.use(cors({
   origin: [
     'http://localhost:5173',
-    'https://jade-taiyaki-7cd6d5.netlify.app'
-  ]
+    'https://filmfinder-mern.netlify.app'
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
 }));
-
 app.use(express.json({ limit: '5mb' }));
 
 app.get('/', (_, res) => {
